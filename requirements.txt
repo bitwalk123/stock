@@ -1,0 +1,11 @@
+fqdn
+isoduration
+jsonpointer
+jupyterlab
+matplotlib
+pip-chill
+pip-review
+uri-template
+webcolors
+xlrd
+yfinance
