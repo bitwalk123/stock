@@ -5,6 +5,7 @@ jupyterlab
 matplotlib
 pip-chill
 pip-review
+pyside6
 uri-template
 webcolors
 xlrd
