@@ -13,5 +13,6 @@ pip-review
 tomli
 uri-template
 webcolors
+wget
 xlrd
 yfinance
