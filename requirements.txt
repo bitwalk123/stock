@@ -3,6 +3,7 @@ fqdn
 importlib-metadata
 importlib-resources
 isoduration
+japanize-matplotlib
 jaraco.text
 jsonpointer
 jupyterlab
