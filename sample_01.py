@@ -4,7 +4,9 @@
 import yfinance as yf
 
 #ターゲットを指定
-ticker = '4755.T'
+symbol = '4755.T'
+ticker = yf.Ticker(symbol)
 
 #データを収集
-data = yf.download(ticker , period='7d', interval = '1d')
+df = ticker.history(period='5d', interval = '1d')
+print(df)
