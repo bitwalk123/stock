@@ -8,9 +8,9 @@ jaraco.text
 jsonpointer
 jupyterlab
 mplfinance
-ordered-set
 pip-chill
 pip-review
+plotly
 tomli
 uri-template
 webcolors
