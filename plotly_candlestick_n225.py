@@ -27,5 +27,6 @@ fig.update_traces(
 fig.update(
     layout_xaxis_rangeslider_visible=False
 )
-#fig.write_html('report_20240913_daily_chart_n225.html')
+# fig.write_image('report_20240913_daily_chart_n225.png')
+# fig.write_html('report_20240913_daily_chart_n225.html')
 fig.show()
