@@ -31,7 +31,7 @@ if __name__ == '__main__':
 
         df.at[r, '高値'] = v_high
         df.at[r, '安値'] = v_low
-        df.at[r, '変化率'] = (v_high - v_low) * 2 / (v_high + v_low)
+        df.at[r, '変化率'] = (v_high - v_low) * 2 / (v_open + v_close)
         df.at[r, '出来高'] = v_volume
         df.at[r, '日時'] = df_ticker.index[0]
 
