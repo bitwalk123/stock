@@ -12,12 +12,31 @@ def df_to_html(df: pd.DataFrame, list_col_format: list) -> list:
     """
     list_html = list()
 
+    list_html.append('<!DOCTYPE html>\n')
+    list_html.append('<html>\n')
+    list_html.append('<head>\n')
+    list_html.append('<meta charset="utf-8">\n')
+
     # style
     list_html.append('<style>\n')
-    list_html.append(
-        'table {border-collapse: collapse; border: solid 1px #aaa; font-family: monospace; font-size: x-small;}\n')
-    list_html.append('th,td {border-bottom: solid 1px #aaa; padding: 0 5px;}\n')
+    list_html.append("""
+    table {
+        border-collapse: collapse;
+        border: solid 1px #aaa;
+        font-family: monospace;
+        font-size: x-small;
+    }\n
+    """)
+    list_html.append("""
+    th,td {
+        border-bottom: solid 1px #aaa;
+        padding: 0 5px;
+    }\n
+    """)
     list_html.append('</style>\n')
+    list_html.append('</head>\n')
+
+    list_html.append('<body>\n')
 
     # table
     list_html.append('<table>\n')
@@ -84,5 +103,8 @@ def df_to_html(df: pd.DataFrame, list_col_format: list) -> list:
 
     # end of table
     list_html.append('</table>\n')
+
+    list_html.append('</body>\n')
+    list_html.append('</html>\n')
 
     return list_html
