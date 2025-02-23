@@ -70,7 +70,7 @@ def aggregate_up_down_ratio(df: pd.DataFrame) -> tuple[list, str]:
         '増減',
     ]
     df_result = df[list_header].copy()
-    list_col_format = ['int', 'str', 'str', 'str', 'str', 'int', 'int', 'float', 'int', 'str']
+    list_col_format = ['int', 'code', 'str', 'str', 'str', 'int', 'int', 'float', 'int', 'str']
 
     list_html = df_to_html(df_result.iloc[0:50], list_col_format)
     file_html = 'report/%04d/up_down_ratio_%02d-%02d.html' % (dt[0].year, dt[0].month, dt[0].day)

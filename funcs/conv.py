@@ -47,7 +47,15 @@ def df_to_html(df: pd.DataFrame, list_col_format: list) -> list:
             if list_col_format[c] == 'str':
                 # _____________________________________________________________
                 # string
-                list_html.append('<td nowrap>%s</td>\n' % value)
+                list_html.append('<td nowrap>%s</td>\n' % str(value))
+            elif list_col_format[c] == 'code':
+                # _____________________________________________________________
+                # string
+                list_html.append(
+                    '<td nowrap><a href="https://finance.yahoo.co.jp/quote/%s.T" target="_blank">%s</a></td>\n' % (
+                        str(value), str(value)
+                    )
+                )
             elif list_col_format[c] == 'ts':
                 # _____________________________________________________________
                 # datetime
