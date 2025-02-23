@@ -15,7 +15,8 @@ def df_to_html(df: pd.DataFrame, list_col_format: list) -> list:
     # style
     list_html.append('<style type="text/css">\n')
     list_html.append('table.topdown {border-collapse: collapse; border: solid 1px #aaa; font-family: monospace; font-size: x-small;}\n')
-    list_html.append('th,td {border-bottom: solid 1px #aaa; padding: 0 5px;}\n')
+    list_html.append('th {border-bottom: solid 1px #aaa; padding: 0 5px; background-color: #123; color: #fff;}\n')
+    list_html.append('td {border-bottom: solid 1px #aaa; padding: 0 5px;}\n')
     list_html.append('</style>\n')
 
     # table
