@@ -1,0 +1,623 @@
+<style type="text/css">
+table.topdown {border-collapse: collapse; border: solid 1px #aaa; font-family: monospace; font-size: x-small;}
+th {border-bottom: solid 1px #aaa; padding: 0 5px; background-color: #123; color: #fff;}
+td {border-bottom: solid 1px #aaa; padding: 0 5px;}
+</style>
+<table class="topdown">
+<thead>
+<tr>
+<th nowrap>#</th>
+<th nowrap>コード</th>
+<th nowrap>銘柄名</th>
+<th nowrap>区分</th>
+<th nowrap>33業種区分</th>
+<th nowrap>高値</th>
+<th nowrap>安値</th>
+<th nowrap>変化率</th>
+<th nowrap>出来高</th>
+<th nowrap>増減</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td nowrap style="text-align: right;">1</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/3521.T" target="_blank">3521</a></td>
+<td nowrap>エコナックホールディングス</td>
+<td nowrap>S</td>
+<td nowrap>サービス業</td>
+<td nowrap style="text-align: right;">183</td>
+<td nowrap style="text-align: right;">129</td>
+<td nowrap style="text-align: right;">0.358</td>
+<td nowrap style="text-align: right;">13,163,900</td>
+<td nowrap>△</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">2</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/7426.T" target="_blank">7426</a></td>
+<td nowrap>山大</td>
+<td nowrap>S</td>
+<td nowrap>卸売業</td>
+<td nowrap style="text-align: right;">1,750</td>
+<td nowrap style="text-align: right;">1,320</td>
+<td nowrap style="text-align: right;">0.300</td>
+<td nowrap style="text-align: right;">462,500</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">3</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/9812.T" target="_blank">9812</a></td>
+<td nowrap>テーオーホールディングス</td>
+<td nowrap>S</td>
+<td nowrap>卸売業</td>
+<td nowrap style="text-align: right;">347</td>
+<td nowrap style="text-align: right;">274</td>
+<td nowrap style="text-align: right;">0.252</td>
+<td nowrap style="text-align: right;">2,874,500</td>
+<td nowrap>△</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">4</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/254A.T" target="_blank">254A</a></td>
+<td nowrap>AIフュージョンキャピタルグループ</td>
+<td nowrap>S</td>
+<td nowrap>証券、商品先物取引業</td>
+<td nowrap style="text-align: right;">1,587</td>
+<td nowrap style="text-align: right;">1,290</td>
+<td nowrap style="text-align: right;">0.205</td>
+<td nowrap style="text-align: right;">858,300</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">5</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/3559.T" target="_blank">3559</a></td>
+<td nowrap>ピーバンドットコム</td>
+<td nowrap>S</td>
+<td nowrap>卸売業</td>
+<td nowrap style="text-align: right;">647</td>
+<td nowrap style="text-align: right;">535</td>
+<td nowrap style="text-align: right;">0.201</td>
+<td nowrap style="text-align: right;">1,574,800</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">6</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/4892.T" target="_blank">4892</a></td>
+<td nowrap>サイフューズ</td>
+<td nowrap>G</td>
+<td nowrap>医薬品</td>
+<td nowrap style="text-align: right;">1,224</td>
+<td nowrap style="text-align: right;">1,028</td>
+<td nowrap style="text-align: right;">0.181</td>
+<td nowrap style="text-align: right;">2,706,500</td>
+<td nowrap>△</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">7</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/1491.T" target="_blank">1491</a></td>
+<td nowrap>中外鉱業</td>
+<td nowrap>S</td>
+<td nowrap>非鉄金属</td>
+<td nowrap style="text-align: right;">73</td>
+<td nowrap style="text-align: right;">61</td>
+<td nowrap style="text-align: right;">0.178</td>
+<td nowrap style="text-align: right;">20,459,100</td>
+<td nowrap>△</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">8</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/5597.T" target="_blank">5597</a></td>
+<td nowrap>ブルーイノベーション</td>
+<td nowrap>G</td>
+<td nowrap>情報・通信業</td>
+<td nowrap style="text-align: right;">1,169</td>
+<td nowrap style="text-align: right;">988</td>
+<td nowrap style="text-align: right;">0.167</td>
+<td nowrap style="text-align: right;">1,020,500</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">9</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/7063.T" target="_blank">7063</a></td>
+<td nowrap>Birdman</td>
+<td nowrap>G</td>
+<td nowrap>サービス業</td>
+<td nowrap style="text-align: right;">305</td>
+<td nowrap style="text-align: right;">262</td>
+<td nowrap style="text-align: right;">0.162</td>
+<td nowrap style="text-align: right;">284,200</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">10</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/6031.T" target="_blank">6031</a></td>
+<td nowrap>ZETA</td>
+<td nowrap>G</td>
+<td nowrap>サービス業</td>
+<td nowrap style="text-align: right;">416</td>
+<td nowrap style="text-align: right;">355</td>
+<td nowrap style="text-align: right;">0.157</td>
+<td nowrap style="text-align: right;">1,280,500</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">11</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/3628.T" target="_blank">3628</a></td>
+<td nowrap>データホライゾン</td>
+<td nowrap>G</td>
+<td nowrap>情報・通信業</td>
+<td nowrap style="text-align: right;">641</td>
+<td nowrap style="text-align: right;">547</td>
+<td nowrap style="text-align: right;">0.155</td>
+<td nowrap style="text-align: right;">193,200</td>
+<td nowrap>△</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">12</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/3189.T" target="_blank">3189</a></td>
+<td nowrap>ANAP</td>
+<td nowrap>S</td>
+<td nowrap>小売業</td>
+<td nowrap style="text-align: right;">617</td>
+<td nowrap style="text-align: right;">534</td>
+<td nowrap style="text-align: right;">0.152</td>
+<td nowrap style="text-align: right;">577,700</td>
+<td nowrap>△</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">13</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/7093.T" target="_blank">7093</a></td>
+<td nowrap>アディッシュ</td>
+<td nowrap>G</td>
+<td nowrap>サービス業</td>
+<td nowrap style="text-align: right;">576</td>
+<td nowrap style="text-align: right;">495</td>
+<td nowrap style="text-align: right;">0.151</td>
+<td nowrap style="text-align: right;">133,300</td>
+<td nowrap>△</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">14</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/6190.T" target="_blank">6190</a></td>
+<td nowrap>フェニックスバイオ</td>
+<td nowrap>G</td>
+<td nowrap>サービス業</td>
+<td nowrap style="text-align: right;">582</td>
+<td nowrap style="text-align: right;">501</td>
+<td nowrap style="text-align: right;">0.149</td>
+<td nowrap style="text-align: right;">1,287,800</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">15</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/3350.T" target="_blank">3350</a></td>
+<td nowrap>メタプラネット</td>
+<td nowrap>S</td>
+<td nowrap>卸売業</td>
+<td nowrap style="text-align: right;">5,800</td>
+<td nowrap style="text-align: right;">5,010</td>
+<td nowrap style="text-align: right;">0.146</td>
+<td nowrap style="text-align: right;">3,671,500</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">16</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/5243.T" target="_blank">5243</a></td>
+<td nowrap>note</td>
+<td nowrap>G</td>
+<td nowrap>情報・通信業</td>
+<td nowrap style="text-align: right;">1,650</td>
+<td nowrap style="text-align: right;">1,432</td>
+<td nowrap style="text-align: right;">0.145</td>
+<td nowrap style="text-align: right;">7,275,700</td>
+<td nowrap>△</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">17</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/1783.T" target="_blank">1783</a></td>
+<td nowrap>fantasista</td>
+<td nowrap>S</td>
+<td nowrap>不動産業</td>
+<td nowrap style="text-align: right;">47</td>
+<td nowrap style="text-align: right;">41</td>
+<td nowrap style="text-align: right;">0.145</td>
+<td nowrap style="text-align: right;">4,230,100</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">18</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/6835.T" target="_blank">6835</a></td>
+<td nowrap>アライドテレシスホールディングス</td>
+<td nowrap>S</td>
+<td nowrap>電気機器</td>
+<td nowrap style="text-align: right;">297</td>
+<td nowrap style="text-align: right;">258</td>
+<td nowrap style="text-align: right;">0.144</td>
+<td nowrap style="text-align: right;">14,528,800</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">19</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/8918.T" target="_blank">8918</a></td>
+<td nowrap>ランド</td>
+<td nowrap>S</td>
+<td nowrap>不動産業</td>
+<td nowrap style="text-align: right;">8</td>
+<td nowrap style="text-align: right;">7</td>
+<td nowrap style="text-align: right;">0.143</td>
+<td nowrap style="text-align: right;">52,334,700</td>
+<td nowrap>-</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">20</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/3823.T" target="_blank">3823</a></td>
+<td nowrap>THE WHY HOW DO COMPANY</td>
+<td nowrap>S</td>
+<td nowrap>情報・通信業</td>
+<td nowrap style="text-align: right;">87</td>
+<td nowrap style="text-align: right;">76</td>
+<td nowrap style="text-align: right;">0.138</td>
+<td nowrap style="text-align: right;">21,660,300</td>
+<td nowrap>-</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">21</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/3195.T" target="_blank">3195</a></td>
+<td nowrap>ジェネレーションパス</td>
+<td nowrap>G</td>
+<td nowrap>小売業</td>
+<td nowrap style="text-align: right;">550</td>
+<td nowrap style="text-align: right;">480</td>
+<td nowrap style="text-align: right;">0.134</td>
+<td nowrap style="text-align: right;">2,234,700</td>
+<td nowrap>△</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">22</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/9704.T" target="_blank">9704</a></td>
+<td nowrap>アゴーラ ホスピタリティー グループ</td>
+<td nowrap>S</td>
+<td nowrap>サービス業</td>
+<td nowrap style="text-align: right;">81</td>
+<td nowrap style="text-align: right;">71</td>
+<td nowrap style="text-align: right;">0.133</td>
+<td nowrap style="text-align: right;">15,084,200</td>
+<td nowrap>△</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">23</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/5571.T" target="_blank">5571</a></td>
+<td nowrap>エキサイトホールディングス</td>
+<td nowrap>S</td>
+<td nowrap>情報・通信業</td>
+<td nowrap style="text-align: right;">1,249</td>
+<td nowrap style="text-align: right;">1,096</td>
+<td nowrap style="text-align: right;">0.132</td>
+<td nowrap style="text-align: right;">58,000</td>
+<td nowrap>△</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">24</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/9561.T" target="_blank">9561</a></td>
+<td nowrap>グラッドキューブ</td>
+<td nowrap>G</td>
+<td nowrap>サービス業</td>
+<td nowrap style="text-align: right;">1,149</td>
+<td nowrap style="text-align: right;">1,005</td>
+<td nowrap style="text-align: right;">0.132</td>
+<td nowrap style="text-align: right;">324,500</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">25</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/9438.T" target="_blank">9438</a></td>
+<td nowrap>エムティーアイ</td>
+<td nowrap>P</td>
+<td nowrap>情報・通信業</td>
+<td nowrap style="text-align: right;">945</td>
+<td nowrap style="text-align: right;">835</td>
+<td nowrap style="text-align: right;">0.129</td>
+<td nowrap style="text-align: right;">372,400</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">26</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/290A.T" target="_blank">290A</a></td>
+<td nowrap>Synspective</td>
+<td nowrap>G</td>
+<td nowrap>情報・通信業</td>
+<td nowrap style="text-align: right;">825</td>
+<td nowrap style="text-align: right;">725</td>
+<td nowrap style="text-align: right;">0.129</td>
+<td nowrap style="text-align: right;">874,700</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">27</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/278A.T" target="_blank">278A</a></td>
+<td nowrap>Terra Drone</td>
+<td nowrap>G</td>
+<td nowrap>精密機器</td>
+<td nowrap style="text-align: right;">9,130</td>
+<td nowrap style="text-align: right;">8,070</td>
+<td nowrap style="text-align: right;">0.126</td>
+<td nowrap style="text-align: right;">674,600</td>
+<td nowrap>△</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">28</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/7215.T" target="_blank">7215</a></td>
+<td nowrap>ファルテック</td>
+<td nowrap>S</td>
+<td nowrap>輸送用機器</td>
+<td nowrap style="text-align: right;">510</td>
+<td nowrap style="text-align: right;">452</td>
+<td nowrap style="text-align: right;">0.126</td>
+<td nowrap style="text-align: right;">47,100</td>
+<td nowrap>-</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">29</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/7353.T" target="_blank">7353</a></td>
+<td nowrap>KIYOラーニング</td>
+<td nowrap>G</td>
+<td nowrap>サービス業</td>
+<td nowrap style="text-align: right;">896</td>
+<td nowrap style="text-align: right;">791</td>
+<td nowrap style="text-align: right;">0.124</td>
+<td nowrap style="text-align: right;">795,300</td>
+<td nowrap>△</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">30</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/3825.T" target="_blank">3825</a></td>
+<td nowrap>リミックスポイント</td>
+<td nowrap>S</td>
+<td nowrap>小売業</td>
+<td nowrap style="text-align: right;">505</td>
+<td nowrap style="text-align: right;">445</td>
+<td nowrap style="text-align: right;">0.124</td>
+<td nowrap style="text-align: right;">12,839,700</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">31</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/5721.T" target="_blank">5721</a></td>
+<td nowrap>エス・サイエンス</td>
+<td nowrap>S</td>
+<td nowrap>非鉄金属</td>
+<td nowrap style="text-align: right;">27</td>
+<td nowrap style="text-align: right;">24</td>
+<td nowrap style="text-align: right;">0.118</td>
+<td nowrap style="text-align: right;">3,984,500</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">32</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/4642.T" target="_blank">4642</a></td>
+<td nowrap>オリジナル設計</td>
+<td nowrap>S</td>
+<td nowrap>サービス業</td>
+<td nowrap style="text-align: right;">1,516</td>
+<td nowrap style="text-align: right;">1,350</td>
+<td nowrap style="text-align: right;">0.115</td>
+<td nowrap style="text-align: right;">27,700</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">33</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/5216.T" target="_blank">5216</a></td>
+<td nowrap>倉元製作所</td>
+<td nowrap>S</td>
+<td nowrap>ガラス・土石製品</td>
+<td nowrap style="text-align: right;">259</td>
+<td nowrap style="text-align: right;">231</td>
+<td nowrap style="text-align: right;">0.115</td>
+<td nowrap style="text-align: right;">1,870,700</td>
+<td nowrap>△</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">34</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/5535.T" target="_blank">5535</a></td>
+<td nowrap>ミガロホールディングス</td>
+<td nowrap>P</td>
+<td nowrap>不動産業</td>
+<td nowrap style="text-align: right;">2,940</td>
+<td nowrap style="text-align: right;">2,625</td>
+<td nowrap style="text-align: right;">0.114</td>
+<td nowrap style="text-align: right;">625,800</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">35</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/3963.T" target="_blank">3963</a></td>
+<td nowrap>シンクロ・フード</td>
+<td nowrap>P</td>
+<td nowrap>情報・通信業</td>
+<td nowrap style="text-align: right;">446</td>
+<td nowrap style="text-align: right;">399</td>
+<td nowrap style="text-align: right;">0.111</td>
+<td nowrap style="text-align: right;">2,582,400</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">36</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/3070.T" target="_blank">3070</a></td>
+<td nowrap>ジェリービーンズグループ</td>
+<td nowrap>G</td>
+<td nowrap>卸売業</td>
+<td nowrap style="text-align: right;">127</td>
+<td nowrap style="text-align: right;">114</td>
+<td nowrap style="text-align: right;">0.109</td>
+<td nowrap style="text-align: right;">2,145,000</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">37</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/6634.T" target="_blank">6634</a></td>
+<td nowrap>ネクスグループ</td>
+<td nowrap>S</td>
+<td nowrap>電気機器</td>
+<td nowrap style="text-align: right;">175</td>
+<td nowrap style="text-align: right;">157</td>
+<td nowrap style="text-align: right;">0.109</td>
+<td nowrap style="text-align: right;">1,198,400</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">38</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/9162.T" target="_blank">9162</a></td>
+<td nowrap>ブリーチ</td>
+<td nowrap>G</td>
+<td nowrap>サービス業</td>
+<td nowrap style="text-align: right;">404</td>
+<td nowrap style="text-align: right;">362</td>
+<td nowrap style="text-align: right;">0.109</td>
+<td nowrap style="text-align: right;">288,400</td>
+<td nowrap>△</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">39</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/2586.T" target="_blank">2586</a></td>
+<td nowrap>フルッタフルッタ</td>
+<td nowrap>G</td>
+<td nowrap>食料品</td>
+<td nowrap style="text-align: right;">148</td>
+<td nowrap style="text-align: right;">133</td>
+<td nowrap style="text-align: right;">0.108</td>
+<td nowrap style="text-align: right;">7,723,500</td>
+<td nowrap>△</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">40</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/4979.T" target="_blank">4979</a></td>
+<td nowrap>OATアグリオ</td>
+<td nowrap>S</td>
+<td nowrap>化学</td>
+<td nowrap style="text-align: right;">2,062</td>
+<td nowrap style="text-align: right;">1,851</td>
+<td nowrap style="text-align: right;">0.107</td>
+<td nowrap style="text-align: right;">91,000</td>
+<td nowrap>△</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">41</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/2776.T" target="_blank">2776</a></td>
+<td nowrap>新都ホールディングス</td>
+<td nowrap>S</td>
+<td nowrap>卸売業</td>
+<td nowrap style="text-align: right;">157</td>
+<td nowrap style="text-align: right;">141</td>
+<td nowrap style="text-align: right;">0.107</td>
+<td nowrap style="text-align: right;">2,493,000</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">42</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/7074.T" target="_blank">7074</a></td>
+<td nowrap>トゥエンティーフォーセブン</td>
+<td nowrap>G</td>
+<td nowrap>サービス業</td>
+<td nowrap style="text-align: right;">405</td>
+<td nowrap style="text-align: right;">365</td>
+<td nowrap style="text-align: right;">0.106</td>
+<td nowrap style="text-align: right;">127,000</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">43</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/4584.T" target="_blank">4584</a></td>
+<td nowrap>キッズウェル・バイオ</td>
+<td nowrap>G</td>
+<td nowrap>医薬品</td>
+<td nowrap style="text-align: right;">151</td>
+<td nowrap style="text-align: right;">136</td>
+<td nowrap style="text-align: right;">0.106</td>
+<td nowrap style="text-align: right;">1,838,800</td>
+<td nowrap>△</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">44</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/5246.T" target="_blank">5246</a></td>
+<td nowrap>ELEMENTS</td>
+<td nowrap>G</td>
+<td nowrap>情報・通信業</td>
+<td nowrap style="text-align: right;">956</td>
+<td nowrap style="text-align: right;">861</td>
+<td nowrap style="text-align: right;">0.106</td>
+<td nowrap style="text-align: right;">4,149,000</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">45</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/6696.T" target="_blank">6696</a></td>
+<td nowrap>トラース・オン・プロダクト</td>
+<td nowrap>G</td>
+<td nowrap>電気機器</td>
+<td nowrap style="text-align: right;">531</td>
+<td nowrap style="text-align: right;">477</td>
+<td nowrap style="text-align: right;">0.105</td>
+<td nowrap style="text-align: right;">2,421,100</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">46</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/6721.T" target="_blank">6721</a></td>
+<td nowrap>ウインテスト</td>
+<td nowrap>S</td>
+<td nowrap>電気機器</td>
+<td nowrap style="text-align: right;">141</td>
+<td nowrap style="text-align: right;">127</td>
+<td nowrap style="text-align: right;">0.105</td>
+<td nowrap style="text-align: right;">2,846,200</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">47</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/9171.T" target="_blank">9171</a></td>
+<td nowrap>栗林商船</td>
+<td nowrap>S</td>
+<td nowrap>海運業</td>
+<td nowrap style="text-align: right;">1,400</td>
+<td nowrap style="text-align: right;">1,264</td>
+<td nowrap style="text-align: right;">0.105</td>
+<td nowrap style="text-align: right;">155,700</td>
+<td nowrap>△</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">48</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/5287.T" target="_blank">5287</a></td>
+<td nowrap>イトーヨーギョー</td>
+<td nowrap>S</td>
+<td nowrap>ガラス・土石製品</td>
+<td nowrap style="text-align: right;">789</td>
+<td nowrap style="text-align: right;">711</td>
+<td nowrap style="text-align: right;">0.104</td>
+<td nowrap style="text-align: right;">222,900</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">49</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/3624.T" target="_blank">3624</a></td>
+<td nowrap>アクセルマーク</td>
+<td nowrap>G</td>
+<td nowrap>情報・通信業</td>
+<td nowrap style="text-align: right;">171</td>
+<td nowrap style="text-align: right;">154</td>
+<td nowrap style="text-align: right;">0.104</td>
+<td nowrap style="text-align: right;">1,550,600</td>
+<td nowrap>▼</td>
+</tr>
+<tr>
+<td nowrap style="text-align: right;">50</td>
+<td nowrap><a href="https://finance.yahoo.co.jp/quote/247A.T" target="_blank">247A</a></td>
+<td nowrap>Aiロボティクス</td>
+<td nowrap>G</td>
+<td nowrap>化学</td>
+<td nowrap style="text-align: right;">3,510</td>
+<td nowrap style="text-align: right;">3,160</td>
+<td nowrap style="text-align: right;">0.103</td>
+<td nowrap style="text-align: right;">489,300</td>
+<td nowrap>△</td>
+</tr>
+</tbody>
+</table>
