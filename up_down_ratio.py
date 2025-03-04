@@ -17,7 +17,8 @@ if __name__ == '__main__':
             df_ticker = ticker.history(period='1d')
         except Exception as e:
             print(e)
-            time.sleep(60)
+            # ３分待って再試行
+            time.sleep(180)
             df_ticker = ticker.history(period='1d')
 
         if len(df_ticker) == 0:
@@ -28,6 +29,10 @@ if __name__ == '__main__':
         v_low = df_ticker['Low'].iloc[0]
         v_close = df_ticker['Close'].iloc[0]
         v_volume = df_ticker['Volume'].iloc[0]
+
+        # 始値と終値の平均が 100 円未満の銘柄は除外
+        if (v_open + v_close) / 2 < 100:
+            continue
 
         df.at[r, '高値'] = v_high
         df.at[r, '安値'] = v_low
