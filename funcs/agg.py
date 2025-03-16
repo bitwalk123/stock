@@ -7,7 +7,7 @@ import pandas as pd
 from funcs.conv import df_to_html
 
 
-def aggregate_up_down_ratio(df: pd.DataFrame) -> tuple[list, str]:
+def aggregate_up_down_ratio(df: pd.DataFrame, top: int = 100) -> tuple[list, str]:
     # 列名の変更
     list_col = list(df.columns)
     col = list(df.columns).index('市場・商品区分')
@@ -72,7 +72,7 @@ def aggregate_up_down_ratio(df: pd.DataFrame) -> tuple[list, str]:
     df_result = df[list_header].copy()
     list_col_format = ['int', 'code', 'str', 'str', 'str', 'int', 'int', 'float', 'int', 'str']
 
-    list_html = df_to_html(df_result.iloc[0:50], list_col_format)
+    list_html = df_to_html(df_result.iloc[0:top], list_col_format)
     file_html = 'report/%04d/up_down_ratio_%02d-%02d.html' % (dt[0].year, dt[0].month, dt[0].day)
 
     return list_html, file_html
