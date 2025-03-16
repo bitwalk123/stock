@@ -3,6 +3,12 @@ import pandas as pd
 
 
 def calc_robust_bollinger(df: pd.DataFrame, period: int):
+    """
+    メジアン統計によるボリンジャーバンドの算出
+    :param df:
+    :param period:
+    :return:
+    """
     r_last = len(df)
     r1 = 0
     df['Median'] = np.nan
