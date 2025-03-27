@@ -1,5 +1,8 @@
 backports.tarfile
 dash
+dash-core-components
+dash-html-components
+dash-table
 fqdn
 html5lib
 importlib-resources
@@ -11,9 +14,10 @@ jsonpointer
 jupyterlab
 jupyterlab-language-pack-ja-jp
 kaleido
-lxml
 mplfinance
+odfpy
 openpyxl
+pandas-datareader
 pip-chill
 pip-review
 scipy
