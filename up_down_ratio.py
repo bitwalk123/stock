@@ -34,6 +34,10 @@ if __name__ == '__main__':
         if (v_open + v_close) / 2 < 100:
             continue
 
+        # 出来高が 100,000 株未満の銘柄は除外
+        if v_volume < 100000:
+            continue
+
         df.at[r, '高値'] = v_high
         df.at[r, '安値'] = v_low
         df.at[r, '変化率'] = (v_high - v_low) * 2 / (v_open + v_close)
