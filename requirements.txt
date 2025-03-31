@@ -18,10 +18,9 @@ mplfinance
 odfpy
 openpyxl
 pandas-datareader
+pingouin
 pip-chill
 pip-review
-scipy
-seaborn
 tenacity
 tinycss2
 tomli
