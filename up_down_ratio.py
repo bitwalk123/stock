@@ -40,7 +40,7 @@ if __name__ == '__main__':
 
         df.at[r, '高値'] = v_high
         df.at[r, '安値'] = v_low
-        df.at[r, '変化率'] = (v_high - v_low) * 2 / (v_open + v_close)
+        df.at[r, '変動率'] = (v_high - v_low) * 2 / (v_open + v_close)
         df.at[r, '出来高'] = v_volume
         df.at[r, '日時'] = df_ticker.index[0]
 
@@ -51,7 +51,7 @@ if __name__ == '__main__':
         else:
             df.at[r, '増減'] = '-'
 
-    # 変化率の集計
+    # 変動率の集計
     list_html, file_html = aggregate_up_down_ratio(df)
 
     # 結果の出力

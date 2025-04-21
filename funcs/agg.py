@@ -1,5 +1,3 @@
-import re
-
 import unicodedata
 
 import pandas as pd
@@ -24,8 +22,8 @@ def aggregate_up_down_ratio(df: pd.DataFrame, top: int = 100) -> tuple[list, str
     dt = sorted(dates, reverse=True)
     df = df[df['日時'] == dt[0]].copy()
 
-    # 「変化率」列で逆ソート
-    df = df.sort_values('変化率', ascending=False).reset_index(drop=True)
+    # 「変動率」列で逆ソート
+    df = df.sort_values('変動率', ascending=False).reset_index(drop=True)
 
     # 順位が判るようにインデックス列から「#」列を作成
     df['#'] = df.index + 1
@@ -65,7 +63,7 @@ def aggregate_up_down_ratio(df: pd.DataFrame, top: int = 100) -> tuple[list, str
         '33業種区分',
         '高値',
         '安値',
-        '変化率',
+        '変動率',
         '出来高',
         '増減',
     ]
