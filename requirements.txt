@@ -12,6 +12,7 @@ japanize-matplotlib
 jaraco.collections
 jsonpointer
 jupyterlab
+jupyterlab-git
 jupyterlab-language-pack-ja-jp
 kaleido
 mplfinance
