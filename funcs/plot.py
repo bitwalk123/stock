@@ -20,7 +20,7 @@ def plot_fontconfig():
     plt.rcParams["font.size"] = 16
 
 
-def plot_mm_palabolic(ticker: yf.Ticker, df: pd.DataFrame, df0: pd.DataFrame):
+def plot_mm_parabolic(ticker: yf.Ticker, df: pd.DataFrame, df0: pd.DataFrame):
     plot_fontconfig()
 
     fig = plt.figure(figsize=(12, 6))
