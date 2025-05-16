@@ -32,17 +32,6 @@ def aggregate_up_down_ratio(df: pd.DataFrame, top: int = 100) -> tuple[list, str
     df['銘柄名'] = [unicodedata.normalize('NFKC', s) for s in df['銘柄名']]
 
     # 「市場・商品区分」列の '（内国株式）' を除外
-    """
-    pattern = re.compile(r'(.+)（内国株式）')
-    list_s = list()
-    for s in df['市場・商品区分']:
-        m = pattern.match(s)
-        if m:
-            list_s.append(m.group(1))
-        else:
-            list_s.append(m)
-    df['市場・商品区分'] = list_s
-    """
     list_category = list()
     for s in df['区分']:
         if s == 'グロース（内国株式）':
@@ -70,6 +59,11 @@ def aggregate_up_down_ratio(df: pd.DataFrame, top: int = 100) -> tuple[list, str
     df_result = df[list_header].copy()
     list_col_format = ['int', 'code', 'str', 'str', 'str', 'int', 'int', 'float', 'int', 'str']
 
+    # 念のため
+    if len(df_result) < top:
+        top = len(df_result)
+
+    # HTML に変換
     list_html = df_to_html(df_result.iloc[0:top], list_col_format)
     file_html = 'report/%04d/up_down_ratio_%02d-%02d.html' % (dt[0].year, dt[0].month, dt[0].day)
 
