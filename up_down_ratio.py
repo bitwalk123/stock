@@ -2,7 +2,7 @@ import time
 
 import yfinance as yf
 
-from funcs.agg import aggregate_up_down_ratio
+from funcs.agg import aggregate_up_down_ratio_daily
 from funcs.tse import get_ticker_list
 
 if __name__ == '__main__':
@@ -52,7 +52,7 @@ if __name__ == '__main__':
             df.at[r, '増減'] = '-'
 
     # 変動率の集計
-    list_html, file_html = aggregate_up_down_ratio(df)
+    list_html, file_html = aggregate_up_down_ratio_daily(df)
 
     # 結果の出力
     with open(file_html, mode='w') as f:
