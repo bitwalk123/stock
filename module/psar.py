@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 
 
@@ -9,13 +10,16 @@ class ParabolicSAR:
 
     def calc(self, df: pd.DataFrame):
         length = len(df)
-        bull = True
+
+        trend = 0
         af = self.af_init
         t = df.index[0]
         ep = df.at[t, "Low"]
         price_high = df.at[t, "High"]
         price_low = df.at[t, "Low"]
 
+        df["Trend"] = np.nan
+        df["EP"] = np.nan
         df["PSAR"] = df["Close"]
 
         for i in range(2, length):
@@ -23,29 +27,29 @@ class ParabolicSAR:
             t1 = df.index[i - 1]
             t2 = df.index[i]
 
-            if bull:
+            if trend > 0:
                 df.at[t2, "PSAR"] = df.at[t1, "PSAR"] + af * (price_high - df.at[t1, "PSAR"])
             else:
                 df.at[t2, "PSAR"] = df.at[t1, "PSAR"] + af * (price_low - df.at[t1, "PSAR"])
             reverse = False
 
-            if bull:
+            if trend > 0:
                 if df.at[t2, "Low"] < df.at[t2, "PSAR"]:
-                    bull = False
+                    trend = -1
                     reverse = True
                     df.at[t2, "PSAR"] = price_high
                     price_low = df.at[t2, "Low"]
                     af = self.af_init
             else:
                 if df.at[t2, "High"] > df.at[t2, "PSAR"]:
-                    bull = True
+                    trend = 1
                     reverse = True
                     df.at[t2, "PSAR"] = price_low
                     price_high = df.at[t2, "High"]
                     af = self.af_init
 
             if not reverse:
-                if bull:
+                if trend > 0:
                     if df.at[t2, "High"] > price_high:
                         price_high = df.at[t2, "High"]
                         af = min(af + self.af_step, self.af_max)
@@ -62,7 +66,11 @@ class ParabolicSAR:
                     if df.at[t0, "High"] > df.at[t2, "PSAR"]:
                         df.at[t2, "PSAR"] = df.at[t0, "High"]
 
-            if bull:
+            df.at[t2, "Trend"] = trend
+
+            # mplfinance 用の Bull/Bear
+            if trend > 0:
                 df.at[t2, "Bull"] = df.at[t2, "PSAR"]
             else:
                 df.at[t2, "Bear"] = df.at[t2, "PSAR"]
+
