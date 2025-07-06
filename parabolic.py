@@ -75,6 +75,6 @@ if __name__ == '__main__':
                 df_result.at[code, "Volume"] = df_ticker_latest["Volume"].iloc[0]
                 df_result.at[code, "Trend"] = df_ticker_latest["Trend"].iloc[0]
 
-    file_output = os.path.join(path_dir_day, "parabolic.xlsx")
     print(df_result)
+    file_output = os.path.join(path_dir_day, "parabolic.xlsx")
     df_result.to_excel(file_output)
