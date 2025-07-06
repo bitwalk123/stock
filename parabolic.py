@@ -77,4 +77,4 @@ if __name__ == '__main__':
 
     file_output = os.path.join(path_dir_day, "parabolic.xlsx")
     print(df_result)
-    pd.to_excel
+    df_result.to_excel(file_output)
