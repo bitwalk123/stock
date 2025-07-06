@@ -25,6 +25,9 @@ if __name__ == '__main__':
     df_result.index.name = "Code"
     df_result = df_result.astype(object)
     base_dir = "parabolic"
+    if not os.path.exists(base_dir):
+        os.mkdir(base_dir)
+
     path_dir_day = ""
 
     for r in range(len(df_tse)):
