@@ -20,6 +20,7 @@ if __name__ == '__main__':
         "Volume": list(),
         "Trend": list(),
         "Go": list(),
+        "Note": list(),
     })
     df_result.index.name = "Code"
     df_result = df_result.astype(object)
