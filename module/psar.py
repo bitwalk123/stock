@@ -11,62 +11,72 @@ class ParabolicSAR:
     def calc(self, df: pd.DataFrame):
         length = len(df)
 
-        trend = 0
         af = self.af_init
-        t = df.index[0]
-        ep = df.at[t, "Low"]
-        price_high = df.at[t, "High"]
-        price_low = df.at[t, "Low"]
 
         df["Trend"] = np.nan
         df["EP"] = np.nan
+        df["AF"] = np.nan
         df["PSAR"] = df["Close"]
+
+        t = df.index[1]
+        trend = 1
+        df.at[t, "Trend"] = trend
+        df.at[t, "EP"] = df.at[t, "Low"]
 
         for i in range(2, length):
             t0 = df.index[i - 2]
             t1 = df.index[i - 1]
             t2 = df.index[i]
 
-            if trend > 0:
-                df.at[t2, "PSAR"] = df.at[t1, "PSAR"] + af * (price_high - df.at[t1, "PSAR"])
-            else:
-                df.at[t2, "PSAR"] = df.at[t1, "PSAR"] + af * (price_low - df.at[t1, "PSAR"])
+            # SAR（Stop And Reverse Point） = 前日のSAR ＋ AF ✕（EP － 前日のSAR）
+            df.at[t2, "PSAR"] = df.at[t1, "PSAR"] + af * (df.at[t1, "EP"] - df.at[t1, "PSAR"])
             reverse = False
 
             if trend > 0:
                 if df.at[t2, "Low"] < df.at[t2, "PSAR"]:
                     trend = -1
                     reverse = True
-                    df.at[t2, "PSAR"] = price_high
-                    price_low = df.at[t2, "Low"]
+                    df.at[t2, "PSAR"] = df.at[t1, "EP"]
+                    df.at[t2, "EP"] = df.at[t2, "Low"]
                     af = self.af_init
             else:
                 if df.at[t2, "High"] > df.at[t2, "PSAR"]:
                     trend = 1
                     reverse = True
-                    df.at[t2, "PSAR"] = price_low
-                    price_high = df.at[t2, "High"]
+                    df.at[t2, "PSAR"] = df.at[t1, "EP"]
+                    df.at[t2, "EP"] = df.at[t2, "High"]
                     af = self.af_init
 
             if not reverse:
                 if trend > 0:
-                    if df.at[t2, "High"] > price_high:
-                        price_high = df.at[t2, "High"]
+                    if df.at[t2, "High"] > df.at[t1, "EP"]:
+                        # EP の更新
+                        df.at[t2, "EP"] = df.at[t2, "High"]
+                        # AF の更新
                         af = min(af + self.af_step, self.af_max)
+                    else:
+                        df.at[t2, "EP"]=df.at[t1, "EP"]
+
                     if df.at[t1, "Low"] < df.at[t2, "PSAR"]:
                         df.at[t2, "PSAR"] = df.at[t1, "Low"]
                     if df.at[t0, "Low"] < df.at[t2, "PSAR"]:
                         df.at[t2, "PSAR"] = df.at[t0, "Low"]
                 else:
-                    if df.at[t2, "Low"] < price_low:
-                        price_low = df.at[t2, "Low"]
+                    if df.at[t2, "Low"] < df.at[t1, "EP"]:
+                        # EP の更新
+                        df.at[t2, "EP"] = df.at[t2, "Low"]
+                        # AF の更新
                         af = min(af + self.af_step, self.af_max)
+                    else:
+                        df.at[t2, "EP"] = df.at[t1, "EP"]
+
                     if df.at[t1, "High"] > df.at[t2, "PSAR"]:
                         df.at[t2, "PSAR"] = df.at[t1, "High"]
                     if df.at[t0, "High"] > df.at[t2, "PSAR"]:
                         df.at[t2, "PSAR"] = df.at[t0, "High"]
 
             df.at[t2, "Trend"] = trend
+            df.at[t2, "AF"] = af
 
             # mplfinance 用の Bull/Bear
             if trend > 0:
