@@ -32,6 +32,7 @@ if __name__ == '__main__':
 
     for r in range(len(df_tse)):
         code = df_tse.at[r, "コード"]
+        name = df_tse.at[r, "銘柄名"]
         symbol = f"{code}.T"
         ticker = yf.Ticker(symbol)
         try:
@@ -148,14 +149,8 @@ if __name__ == '__main__':
                     ax=ax[0],
                 )
 
-                if "longName" in ticker.info.keys():
-                    ax[0].set_title(f"Daily chart for {ticker.info["longName"]} ({code}) on {date_str}")
-                elif "shortName" in ticker.info.keys():
-                    ax[0].set_title(f"Daily chart for {ticker.info["shortName"]} ({code}) on {date_str}")
-                else:
-                    ax[0].set_title(f"Daily chart for {code} on {date_str}")
-
                 ax[0].legend(loc="best", fontsize=8)
+                ax[0].set_title(f"{name} ({code}) on {date_str}")
 
                 plt.tight_layout()
                 chart_name = os.path.join(path_dir_day, f"{code}.png")
