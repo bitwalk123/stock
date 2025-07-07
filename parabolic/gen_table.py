@@ -6,7 +6,7 @@ if __name__ == '__main__':
     url_base = "https://raw.githubusercontent.com/bitwalk123/stock/refs/heads/main/parabolic"
     y = "2025"
     m = "07"
-    d = "04"
+    d = "07"
     url_target = os.path.join(url_base, y, m, d)
     url_table = os.path.join(url_target, "parabolic.xlsx")
     df = pd.read_excel(url_table)
