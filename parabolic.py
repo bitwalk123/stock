@@ -66,6 +66,9 @@ if __name__ == '__main__':
         df_ticker_latest = df0.tail(1)
         if df0.tail(2)["Trend"].sum() == 0:
             if df_ticker_latest["Trend"].iloc[0] > 0:
+                print(f"\n{name} ({code})")
+                print(df0.tail(2)[["High", "Close", "Trend", "PSAR"]])
+
                 dt_latest = df_ticker_latest.index[0]
                 y = f"{dt_latest.year:04}"
                 m = f"{dt_latest.month:02}"
