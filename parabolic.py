@@ -64,10 +64,8 @@ if __name__ == '__main__':
         psar = ParabolicSAR()
         psar.calc(df0)
         df_ticker_latest = df0.tail(1)
-        # 下降トレンド
-        if df_ticker_latest["Trend"].iloc[0] < 0:
-            # 高値が PSAR にタッチしたか？
-            if df_ticker_latest["Bear"].iloc[0] <= df_ticker_latest["High"].iloc[0]:
+        if df0.tail(2)["Trend"].sum() == 0:
+            if df_ticker_latest["Trend"].iloc[0] > 0:
                 dt_latest = df_ticker_latest.index[0]
                 y = f"{dt_latest.year:04}"
                 m = f"{dt_latest.month:02}"
