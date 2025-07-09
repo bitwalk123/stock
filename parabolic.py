@@ -1,5 +1,6 @@
 import datetime
 import os
+import shutil
 import time
 
 import matplotlib.font_manager as fm
@@ -12,6 +13,27 @@ from funcs.tse import get_ticker_list
 from module.psar import ParabolicSAR
 
 if __name__ == '__main__':
+    base_dir = "parabolic"
+    if not os.path.exists(base_dir):
+        os.mkdir(base_dir)
+
+    # 現在の日付で格納先のディレクトリを確認
+    dt_now = datetime.datetime.now()
+    y = f"{dt_now.year:04}"
+    m = f"{dt_now.month:02}"
+    d = f"{dt_now.day:02}"
+
+    path_dir_year = os.path.join(base_dir, y)
+    if not os.path.exists(path_dir_year):
+        os.mkdir(path_dir_year)
+    path_dir_month = os.path.join(path_dir_year, m)
+    if not os.path.exists(path_dir_month):
+        os.mkdir(path_dir_month)
+    path_dir_day = os.path.join(path_dir_month, d)
+    # 日付データのディレクトリが存在していれば削除
+    if os.path.exists(path_dir_day):
+        shutil.rmtree(path_dir_day)
+
     # 対象銘柄リストの取得
     df_tse = get_ticker_list()
     df_result = pd.DataFrame({
@@ -24,11 +46,6 @@ if __name__ == '__main__':
     })
     df_result.index.name = "Code"
     df_result = df_result.astype(object)
-    base_dir = "parabolic"
-    if not os.path.exists(base_dir):
-        os.mkdir(base_dir)
-
-    path_dir_day = ""
 
     for r in range(len(df_tse)):
         code = df_tse.at[r, "コード"]
@@ -69,6 +86,7 @@ if __name__ == '__main__':
                 print(f"\n{name} ({code})")
                 print(df0.tail(2)[["High", "Close", "Trend", "PSAR"]])
 
+                # 最新の日付で格納先のディレクトリを確認
                 dt_latest = df_ticker_latest.index[0]
                 y = f"{dt_latest.year:04}"
                 m = f"{dt_latest.month:02}"
