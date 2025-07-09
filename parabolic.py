@@ -104,7 +104,7 @@ if __name__ == '__main__':
 
                 plt.rcParams["font.family"] = font_prop.get_name()
                 plt.rcParams["font.size"] = 14
-                fig = plt.figure(figsize=(12, 8))
+                fig = plt.figure(figsize=(12, 6))
                 ax = dict()
                 n = 2
                 gs = fig.add_gridspec(
