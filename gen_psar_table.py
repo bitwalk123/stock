@@ -3,13 +3,16 @@ import os
 import pandas as pd
 
 if __name__ == '__main__':
-    url_base = "https://raw.githubusercontent.com/bitwalk123/stock/refs/heads/main/parabolic"
-    y = "2025"
-    m = "07"
-    d = "09"
-    url_target = os.path.join(url_base, y, m, d)
-    url_table = os.path.join(url_target, "parabolic.xlsx")
-    df = pd.read_excel(url_table)
+    url_base ="https://raw.githubusercontent.com/bitwalk123/stock/refs/heads/main/"
+    path_base = "parabolic"
+    years = sorted(os.listdir(path_base))
+    path_year = os.path.join(path_base, years[-1])
+    months = sorted(os.listdir(path_year))
+    path_month = os.path.join(path_year, months[-1])
+    days = sorted(os.listdir(path_month))
+    path_day = os.path.join(path_month, days[-1])
+    path_table = os.path.join(path_day, "parabolic.xlsx")
+    df = pd.read_excel(path_table)
     list_html = list()
     list_html.append('<table class="simple">')
     list_html.append('<thead>')
@@ -30,7 +33,7 @@ if __name__ == '__main__':
         for c in df.columns:
             v = df.at[r, c]
             if c == "Code":
-                url_image = os.path.join(url_target, f"{v}.png")
+                url_image = os.path.join(url_base, path_day, f"{v}.png")
                 list_html.append(f'<td nowrap><a href="{url_image}" target="_blank">{v}</a></td>')
             elif c == "Date":
                 list_html.append(f'<td nowrap>{v}</td>')
@@ -40,13 +43,8 @@ if __name__ == '__main__':
                 list_html.append(f'<td nowrap style="text-align: right;">{v:d}</td>')
             elif c == "Trend":
                 list_html.append(f'<td nowrap style="text-align: right;">{v:d}</td>')
-            elif c == "Note":
-                if pd.isna(v):
-                    list_html.append(f'<td></td>')
-                else:
-                    list_html.append(f'<td style="text-align: left;">{v}</td>')
             else:
-                list_html.append(f'<td>{v}</td>')
+                continue
 
         list_html.append('</tr>')
 
