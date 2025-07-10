@@ -22,8 +22,6 @@ if __name__ == '__main__':
     list_html.append('<th>Close</th>')
     list_html.append('<th>Volume</th>')
     list_html.append('<th>Trend</th>')
-    list_html.append('<th>Go</th>')
-    list_html.append('<th>Note</th>')
     list_html.append('</tr>')
     list_html.append('</thead>')
     list_html.append('<tbody>')
