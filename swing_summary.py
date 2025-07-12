@@ -3,8 +3,6 @@ import unicodedata
 
 import pandas as pd
 
-from funcs.tse import get_ticker_name_list
-
 if __name__ == '__main__':
     url_yahoo = "https://finance.yahoo.co.jp/quote"
     path_base = "swing"
@@ -63,4 +61,3 @@ if __name__ == '__main__':
     print('</tbody>')
     print('</table>')
     total = df["Profit"].sum()
-
