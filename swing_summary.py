@@ -7,7 +7,7 @@ if __name__ == '__main__':
     url_yahoo = "https://finance.yahoo.co.jp/quote"
     path_base = "swing"
     dir_year = "2025"
-    name_excel = "20250712.xlsx"
+    name_excel = "20250719.xlsx"
     path_file = os.path.join(path_base, dir_year, name_excel)
     df0 = pd.read_excel(path_file)
     col_date = "約定日\n受渡日"
