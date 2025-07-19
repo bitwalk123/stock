@@ -10,6 +10,7 @@ html5lib
 importlib-resources
 inflect
 isoduration
+isort
 japanize-matplotlib
 jaraco-collections
 jaraco-functools
