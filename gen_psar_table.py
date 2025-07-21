@@ -1,6 +1,9 @@
 import os
+import unicodedata
 
 import pandas as pd
+
+from funcs.tse import get_ticker_name_list
 
 if __name__ == '__main__':
     url_base ="https://raw.githubusercontent.com/bitwalk123/stock/refs/heads/main/"
@@ -18,6 +21,7 @@ if __name__ == '__main__':
     list_html.append('<thead>')
     list_html.append('<tr>')
     list_html.append('<th>Code</th>')
+    list_html.append('<th>Name</th>')
     list_html.append('<th>Date</th>')
     list_html.append('<th>Close</th>')
     list_html.append('<th>Volume</th>')
@@ -33,6 +37,9 @@ if __name__ == '__main__':
             if c == "Code":
                 url_image = os.path.join(url_base, path_day, f"{v}.png")
                 list_html.append(f'<td nowrap><a href="{url_image}" target="_blank">{v}</a></td>')
+                dict_name = get_ticker_name_list([f"{v}"])
+                name = unicodedata.normalize('NFKC', dict_name[f"{v}"])
+                list_html.append(f'<td nowrap>{name}</td>')
             elif c == "Date":
                 list_html.append(f'<td nowrap>{v}</td>')
             elif c == "Close":
