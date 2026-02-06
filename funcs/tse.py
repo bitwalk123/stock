@@ -12,7 +12,7 @@ def get_ticker_list() -> pd.DataFrame:
     df = df_tse[df_tse['市場・商品区分'].isin(market_target)].reset_index(drop=True)
     df['コード'] = df['コード'].astype(str)
     df['日時'] = None
-    df['日時'] = df['日時'].astype(str)
+    # df['日時'] = df['日時'].astype(str)
     df['高値'] = np.nan
     df['安値'] = np.nan
     df['変化率'] = np.nan
@@ -21,6 +21,7 @@ def get_ticker_list() -> pd.DataFrame:
     df['増減'] = df['増減'].astype(str)
 
     return df
+
 
 def get_ticker_name_list(list_ticker: list) -> dict:
     df = get_ticker_list()

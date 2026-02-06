@@ -26,9 +26,10 @@ def aggregate_up_down_ratio(df, top):
     list_col[col] = '区分'
     df.columns = list_col
     # 「日時」列が 'None' の行を除外
-    df = df[df['日時'] != 'None'].copy()
+    df = df[df['日時'].notnull()].copy()
     # ユニークな日時を抽出
     dates = df['日時'].unique()
+    # print(dates)
     # 万が一複数の日時が存在した場合、一番新しい日時のデータのみ扱う
     dt = sorted(dates, reverse=True)
     df = df[df['日時'] == dt[0]].copy()
