@@ -1,3 +1,5 @@
+import os
+
 import pandas as pd
 import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
@@ -6,7 +8,10 @@ import pingouin as pg
 import seaborn as sns
 import yfinance as yf
 
+from matplotlib import ticker as ticker
+
 from funcs.technical import psar
+from funcs.tse import get_ticker_name_list
 
 
 def plot_fontconfig():
