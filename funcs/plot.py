@@ -281,7 +281,7 @@ def trend_diff(code: str, df: pd.DataFrame, name: str = ""):
         # 米国 ADR
         img_name = os.path.join(dir_name, f"{code}_trend.png")
         plt.rcParams["font.size"] = 8
-        fig, ax = plt.subplots(figsize=(3, 1.8))
+        fig, ax = plt.subplots(figsize=(6.8, 2))
         mpf.plot(
             df,
             type="candle",
