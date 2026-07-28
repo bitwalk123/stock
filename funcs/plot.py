@@ -385,7 +385,7 @@ def trend_diff(code: str, df: pd.DataFrame, df0: pd.DataFrame = pd.DataFrame(), 
             ax=ax,
         )
         ax.yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:,.0f}"))
-        ax.set_ylabel("USD")
+        # ax.set_ylabel("USD")
         ax.grid()
 
         ax.set_title(f"{name} ({code})")
