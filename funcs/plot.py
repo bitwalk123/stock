@@ -329,61 +329,73 @@ def trend_diff(code: str, df: pd.DataFrame, df0: pd.DataFrame = pd.DataFrame(), 
 
         # Bollinger bands
         period = 13
-        mv_median = df0["Close"].rolling(period).median()
-        mv_q1 = df0["Close"].rolling(period).quantile(0.25)
-        mv_q3 = df0["Close"].rolling(period).quantile(0.75)
-        mv_iqr = mv_q3 - mv_q1
-        mv_lower = mv_q1 - mv_iqr * 1.5
-        mv_upper = mv_q3 + mv_iqr * 1.5
+        if len(df0) >= 100:
+            mv_median = df0["Close"].rolling(period).median()
+            mv_q1 = df0["Close"].rolling(period).quantile(0.25)
+            mv_q3 = df0["Close"].rolling(period).quantile(0.75)
+            mv_iqr = mv_q3 - mv_q1
+            mv_lower = mv_q1 - mv_iqr * 1.5
+            mv_upper = mv_q3 + mv_iqr * 1.5
 
-        apds = [
-            mpf.make_addplot(
-                mv_upper[df.index],
-                width=1,
-                color="C1",
-                linestyle="dotted",
-                ax=ax,
-            ),
-            mpf.make_addplot(
-                mv_q3[df.index],
-                width=0.9,
-                color="C2",
-                linestyle="dashed",
-                ax=ax,
-            ),
-            mpf.make_addplot(
-                mv_median[df.index],
-                width=1,
-                color="C3",
-                linestyle="solid",
-                ax=ax,
-            ),
-            mpf.make_addplot(
-                mv_q1[df.index],
-                width=0.9,
-                color="C2",
-                linestyle="dashed",
-                ax=ax,
-            ),
-            mpf.make_addplot(
-                mv_lower[df.index],
-                width=1,
-                color="C1",
-                linestyle="dotted",
-                ax=ax,
-            ),
-        ]
+            apds = [
+                mpf.make_addplot(
+                    mv_upper[df.index],
+                    width=1,
+                    color="C1",
+                    linestyle="dotted",
+                    ax=ax,
+                ),
+                mpf.make_addplot(
+                    mv_q3[df.index],
+                    width=0.9,
+                    color="C2",
+                    linestyle="dashed",
+                    ax=ax,
+                ),
+                mpf.make_addplot(
+                    mv_median[df.index],
+                    width=1,
+                    color="C3",
+                    linestyle="solid",
+                    ax=ax,
+                ),
+                mpf.make_addplot(
+                    mv_q1[df.index],
+                    width=0.9,
+                    color="C2",
+                    linestyle="dashed",
+                    ax=ax,
+                ),
+                mpf.make_addplot(
+                    mv_lower[df.index],
+                    width=1,
+                    color="C1",
+                    linestyle="dotted",
+                    ax=ax,
+                ),
+            ]
 
-        mpf.plot(
-            df,
-            type="candle",
-            style="default",
-            datetime_format="%m/%d",
-            xrotation=0,
-            update_width_config=dict(candle_linewidth=0.75),
-            addplot=apds,
-            ax=ax,
-        )
+            mpf.plot(
+                df,
+                type="candle",
+                style="default",
+                datetime_format="%m/%d",
+                xrotation=0,
+                update_width_config=dict(candle_linewidth=0.75),
+                addplot=apds,
+                ax=ax,
+            )
+        else:
+            mpf.plot(
+                df,
+                type="candle",
+                style="default",
+                datetime_format="%m/%d",
+                xrotation=0,
+                update_width_config=dict(candle_linewidth=0.75),
+                ax=ax,
+            )
+
         ax.yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:,.0f}"))
         # ax.set_ylabel("USD")
         ax.grid()
