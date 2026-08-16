@@ -237,15 +237,15 @@ def trend_diff(code: str, df: pd.DataFrame, df0: pd.DataFrame = pd.DataFrame(), 
         # 東証銘柄
         img_name = os.path.join(dir_name, f"{code}_trend_diff.png")
         plt.rcParams["font.size"] = 9
-        n = 2
-        fig = plt.figure(figsize=(6.8, 3.5))
+        n = 3
+        fig = plt.figure(figsize=(6.8, 4))
         ax = dict()
         gs = fig.add_gridspec(
             n,
             1,
             wspace=0.0,
             hspace=0.0,
-            height_ratios=[2.5 if i <= 0 else 1 for i in range(n)],
+            height_ratios=[2 if i <= 0 else 1 for i in range(n)],
         )
         for i, axis in enumerate(gs.subplots(sharex="col")):
             ax[i] = axis
@@ -302,7 +302,7 @@ def trend_diff(code: str, df: pd.DataFrame, df0: pd.DataFrame = pd.DataFrame(), 
                 linestyle="dotted",
                 ax=ax[0],
             ),
-            mpf.make_addplot(df["Diff"], width=0.75, color="C1", ax=ax[1]),
+            mpf.make_addplot(df["Diff"], width=0.75, color="C1", ax=ax[2]),
         ]
         mpf.plot(
             df,
@@ -312,15 +312,16 @@ def trend_diff(code: str, df: pd.DataFrame, df0: pd.DataFrame = pd.DataFrame(), 
             xrotation=0,
             update_width_config=dict(candle_linewidth=0.75),
             addplot=apds,
+            volume=ax[1],
             ax=ax[0],
         )
         ax[0].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:,.0f}"))
 
-        ax[1].set_xlabel(footer)
-        ax[1].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:,.0f}"))
-        _, high = ax[1].get_ylim()
-        ax[1].set_ylim(0, high)
-        ax[1].set_ylabel("High - Low")
+        ax[2].set_xlabel(footer)
+        ax[2].yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:,.0f}"))
+        _, high = ax[2].get_ylim()
+        ax[2].set_ylim(0, high)
+        ax[2].set_ylabel("High - Low")
     else:
         # 米国 ADR
         img_name = os.path.join(dir_name, f"{code}_trend.png")
