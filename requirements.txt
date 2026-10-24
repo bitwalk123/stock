@@ -15,6 +15,7 @@ openpyxl
 pingouin
 pip-chill
 pip-review
+pylatexenc
 rfc3987-syntax
 tinycss2
 tomli
